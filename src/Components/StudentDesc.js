@@ -15,18 +15,17 @@ const StudentDesc = () => {
   });
 
   useEffect(() => {
-    console.log(rows);
-    rows.map((row) => {
-      if (id == row.id) {
+    rows.forEach((row) => {
+      if (row.id === id) {
         setData({
           name: row.name,
           age: row.age,
           course: row.course,
           batch: row.batch,
-        })
+        });
       }
     });
-  }, [])
+  }, [id, rows]);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -35,30 +34,26 @@ const StudentDesc = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (id === undefined) {
-      let newArr = { ...data, id: new Date().getTime().toString() }
-      // setData({ ...data, id: new Date().getTime().toString() });
-      setRows([...rows, newArr])
+      let newArr = { ...data, id: new Date().getTime().toString() };
+      setRows([...rows, newArr]);
     } else {
       setRows((prevState) =>
-        prevState.map((student
-        ) =>
-          (student.id == id) ?
-            {
-              "id": id,
-              "name": data.name,
-              "age": data.age,
-              "course": data.course,
-              "batch": data.batch,
-            } : student
-
+        prevState.map((student) =>
+          student.id === id
+            ? {
+                id: id,
+                name: data.name,
+                age: data.age,
+                course: data.course,
+                batch: data.batch,
+              }
+            : student
         )
-      )
+      );
     }
     console.log(rows);
-    navigate("/students")
-  }
-
-
+    navigate("/students");
+  };
 
   return (
     <div id="studentDesc">
@@ -107,7 +102,9 @@ const StudentDesc = () => {
           />
           <br />
         </fieldset>
-        <button type="submit" className="updateBtn">Update</button>
+        <button type="submit" className="updateBtn">
+          Update
+        </button>
         <Link to="/students">
           <button className="backBtn">Go Back</button>
         </Link>
