@@ -1,0 +1,74 @@
+.App {
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+#studentCompo {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+#studentCompo button {
+  height: 50px;
+  font-size: 25px;
+  border-radius: 25px;
+  padding: 10px 30px;
+  background: white;
+  margin-top: 18px;
+  cursor: pointer;
+}
+#studentCompo button a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  background: black;
+  margin: 0;
+}
+.header ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+.header ul li a {
+  text-decoration: none;
+  font-size: 32px;
+  color: white;
+}
+
+table p {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#studentDesc form button {
+  height: 50px;
+  width: 250px;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#studentDesc fieldset {
+  margin: 5rem 0 2.5rem 5rem;
+  width: 30rem;
+  display: inline-block;
+  box-sizing: border-box;
+}
+#studentDesc fieldset:nth-child(1) {
+  margin-right: auto;
+}
+#studentDesc input {
+  background-color: #00d4ff;
+  border: none;
+  height: 2.5rem;
+  width: 100%;
+  outline: none;
+}
+#studentDesc legend {
+  font-size: 1.5rem;
+}
+.updateBtn {
+  margin-left: 50rem;
+  margin-right: 3rem;
+}
